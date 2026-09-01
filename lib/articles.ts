@@ -8,6 +8,11 @@ const ARTICLES_DIR = path.join(process.cwd(), "content", "articles");
 
 export type SkillLevel = "Beginner" | "Intermediate" | "Advanced";
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface Source {
   title: string;
   publisher: string;
@@ -32,6 +37,7 @@ export interface ArticleFrontmatter {
   featured: boolean;
   prerequisites: string[];
   sources?: Source[];
+  faq?: FaqItem[];
 }
 
 export interface ArticleSummary extends ArticleFrontmatter {

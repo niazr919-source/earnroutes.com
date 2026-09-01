@@ -4,6 +4,7 @@ import { ListChecks } from "lucide-react";
 import { AdSlot } from "@/components/AdSlot";
 import { AuthorBox } from "@/components/AuthorBox";
 import { SourcesList } from "@/components/SourcesList";
+import { FaqSection } from "@/components/FaqSection";
 import { TableOfContents } from "@/components/TableOfContents";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ArticleCard } from "@/components/ArticleCard";
@@ -11,7 +12,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { StatBadge, skillLevelTone } from "@/components/StatBadge";
 import { getAllArticleSlugs, getArticleBySlug, getRelatedArticles } from "@/lib/articles";
 import { getCategoryBySlug } from "@/lib/categories";
-import { buildMetadata, breadcrumbJsonLd, articleJsonLd } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd, articleJsonLd, faqJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return getAllArticleSlugs().map((slug) => ({ slug }));
@@ -51,6 +52,7 @@ export default async function GuidePage({ params }: { params: { slug: string } }
             ...(category ? [{ name: category.name, path: `/category/${category.slug}` }] : []),
             { name: article.title, path },
           ]),
+          ...(article.faq && article.faq.length > 0 ? [faqJsonLd(article.faq)] : []),
         ]}
       />
 
@@ -112,6 +114,8 @@ export default async function GuidePage({ params }: { params: { slug: string } }
             />
 
             <AdSlot id="ad-in-article-1" variant="in-article" />
+
+            {article.faq && article.faq.length > 0 && <FaqSection items={article.faq} />}
 
             {article.sources && article.sources.length > 0 && (
               <SourcesList sources={article.sources} />

@@ -17,6 +17,15 @@ featured: false
 prerequisites:
   - "An approved AdSense account that is earning"
   - "A mailing address you reliably receive post at"
+faq:
+  - question: "What is the AdSense payment threshold?"
+    answer: "$100 USD. Google issues payment once outstanding earnings reach that amount and there are no holds on the account. Thresholds differ by reporting currency, and Google publishes the amount for each."
+  - question: "When does Google AdSense pay each month?"
+    answer: "If your balance reaches the payment threshold by the end of the month and there are no holds, Google issues payment between the 21st and the 26th of the following month. Bank transfer time is additional."
+  - question: "When does AdSense send the PIN?"
+    answer: "When earnings reach the $10 verification threshold, Google posts a 6-digit PIN to your payment address. It usually takes 3 weeks to arrive, and you can request a replacement if it does not."
+  - question: "What happens if you do not enter your AdSense PIN?"
+    answer: "You have 4 months from the date the PIN is generated to complete address verification. Miss that window and Google stops showing ads on your pages. Entering the PIN incorrectly three times also stops ads."
 sources:
   - title: "Payment thresholds"
     publisher: "Google AdSense Help"

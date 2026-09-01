@@ -17,6 +17,15 @@ featured: true
 prerequisites:
   - "A live site that has been rejected, or is about to be submitted"
   - "The willingness to delete pages rather than only add them"
+faq:
+  - question: "What does \"low value content\" mean on AdSense?"
+    answer: "It means the reviewer judged the site's content insufficiently original or useful to justify showing ads. AdSense requires content that is high-quality, original and attracts an audience, and reviewers apply Google's broader helpful-content standards when deciding."
+  - question: "How long should you wait before reapplying to AdSense?"
+    answer: "Give Google time to recrawl the changed pages before reapplying, so the reviewer sees the improved version rather than the old one. Reapplying the same day risks a review of unchanged or cached pages."
+  - question: "Does AI-written content cause a low value content rejection?"
+    answer: "Not by itself. Google's objection is to content produced at scale that adds nothing, however it was written. AI-assisted articles containing original analysis, real testing and specific detail are acceptable; large volumes of near-identical AI pages match the scaled content abuse pattern Google's spam policies target."
+  - question: "Should you delete articles before applying for AdSense?"
+    answer: "Usually yes. A reviewer forms an impression of the whole site, so thin pages drag down strong ones. Removing filler raises the site's average quality immediately and costs nothing you will miss."
 sources:
   - title: "Creating helpful, reliable, people-first content"
     publisher: "Google Search Central"

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { ArticleFrontmatter } from "./articles";
+import type { ArticleFrontmatter, FaqItem } from "./articles";
 
 export const SITE_NAME = "EarnRoutes";
 export const SITE_DOMAIN = "earnroutes.com";
@@ -122,5 +122,25 @@ export function articleJsonLd(article: ArticleFrontmatter, path: string) {
       "@type": "WebPage",
       "@id": absoluteUrl(path),
     },
+  };
+}
+
+/**
+ * FAQPage structured data.
+ *
+ * Google deprecated FAQ rich results on 7 May 2026, so this earns nothing in
+ * Google Search. It is emitted anyway because Google states owners may leave the
+ * markup in place for other search engines and services, and answer engines
+ * still consume it. The visible FAQ block is what does the real work.
+ */
+export function faqJsonLd(items: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
   };
 }

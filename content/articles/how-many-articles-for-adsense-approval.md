@@ -16,6 +16,15 @@ authorBio: "Compiled from Google's published AdSense eligibility requirements, h
 featured: true
 prerequisites:
   - "A site you're planning to submit to AdSense"
+faq:
+  - question: "How many articles do you need for AdSense approval?"
+    answer: "Google publishes no minimum article count. Its eligibility requirements ask only for unique, high-quality original content, compliance with the Program policies, and an applicant aged 18 or over. Every specific number quoted elsewhere — 15, 20, 25 or 30 — was invented by the site publishing it."
+  - question: "Can you get AdSense approved with 10 articles?"
+    answer: "Yes. There is no rule preventing it. Approval depends on whether the site looks like a genuine publication with original, useful content and working privacy, terms, contact and About pages — not on reaching a page count."
+  - question: "Does word count matter for AdSense approval?"
+    answer: "Google states no minimum word count. Length matters only insofar as it reflects whether a page covers its topic properly. A thorough 800-word answer can outperform a padded 2,000-word one."
+  - question: "Will publishing more articles fix an AdSense rejection?"
+    answer: "Often not. If existing pages are thin, adding more of the same lowers the site's average quality. Deleting weak pages usually improves a review more than publishing additional ones."
 sources:
   - title: "AdSense eligibility requirements"
     publisher: "Google AdSense Help"
