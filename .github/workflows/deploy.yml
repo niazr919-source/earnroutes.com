@@ -9,6 +9,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      submit_all:
+        description: "Submit every URL to IndexNow, not just changed pages"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -22,6 +27,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Two commits so the changed-file diff below has a parent to compare to.
+          fetch-depth: 2
 
       - uses: actions/setup-node@v4
         with:
@@ -44,6 +52,21 @@ jobs:
           test -f out/404.html   || { echo "::error::out/404.html missing"; exit 1; }
           test -f out/.htaccess  || { echo "::error::out/.htaccess missing"; exit 1; }
           test -f out/sitemap.xml || { echo "::error::out/sitemap.xml missing"; exit 1; }
+          test -f out/llms.txt   || { echo "::error::out/llms.txt missing"; exit 1; }
+
+      - name: Work out which URLs changed
+        id: urls
+        run: |
+          CHANGED=$(git diff --name-only HEAD^ HEAD || true)
+          echo "Changed files:"
+          echo "$CHANGED"
+          # One space-separated line: URLs never contain spaces, and a
+          # multi-line output would break the shell command that consumes it.
+          LIST=$(node scripts/indexnow-urls.mjs $CHANGED | xargs)
+          echo "Submitting: ${LIST:-(nothing)}"
+          echo "list=$LIST" >> "$GITHUB_OUTPUT"
+        env:
+          INDEXNOW_SUBMIT_ALL: ${{ inputs.submit_all }}
 
       - name: Publish out/ to the deploy branch
         env:
@@ -56,3 +79,13 @@ jobs:
           git add -A
           git commit -q -m "Build ${GITHUB_SHA::7} from main"
           git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" deploy
+
+      # Tell IndexNow (Bing, Yandex, Seznam) what changed. The ping script waits
+      # for Hostinger to pull the deploy branch before submitting, so Bing is
+      # never pointed at the previous build. Never fail the deploy over this.
+      - name: Notify IndexNow
+        if: steps.urls.outputs.list != ''
+        continue-on-error: true
+        env:
+          URLS: ${{ steps.urls.outputs.list }}
+        run: node scripts/indexnow-ping.mjs $URLS

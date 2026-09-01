@@ -26,3 +26,6 @@ next-env.d.ts
 
 # generated at build time by scripts/generate-ads-txt.mjs
 /public/ads.txt
+
+# generated at build time by scripts/generate-indexnow-key.mjs
+/public/*.txt
