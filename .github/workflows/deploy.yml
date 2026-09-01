@@ -1,0 +1,58 @@
+# Builds the static site and publishes it to the `deploy` branch.
+#
+# Hostinger's Git integration clones a branch straight into public_html and does
+# not run a build, so the branch it pulls has to contain finished HTML. Source
+# stays on `main`; `deploy` holds only the contents of out/.
+name: Build and publish static site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      # Both values are inlined into client-side JS, so they are repository
+      # variables (Settings > Secrets and variables > Actions > Variables),
+      # not secrets. An unset AdSense ID simply omits ads.txt and the ad tags.
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_ADSENSE_CLIENT_ID: ${{ vars.NEXT_PUBLIC_ADSENSE_CLIENT_ID }}
+          NEXT_PUBLIC_CONTACT_ENDPOINT: ${{ vars.NEXT_PUBLIC_CONTACT_ENDPOINT }}
+
+      - name: Verify the export looks complete
+        run: |
+          test -f out/index.html || { echo "::error::out/index.html missing"; exit 1; }
+          test -f out/404.html   || { echo "::error::out/404.html missing"; exit 1; }
+          test -f out/.htaccess  || { echo "::error::out/.htaccess missing"; exit 1; }
+          test -f out/sitemap.xml || { echo "::error::out/sitemap.xml missing"; exit 1; }
+
+      - name: Publish out/ to the deploy branch
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd out
+          git init -q -b deploy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Build ${GITHUB_SHA::7} from main"
+          git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" deploy
