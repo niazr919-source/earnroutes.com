@@ -1,0 +1,133 @@
+---
+title: "\"Ad Serving Has Been Limited\" on AdSense: What It Means and What Actually Fixes It"
+slug: "adsense-ad-serving-limited-fix"
+description: "Google limits ad serving for two specific reasons. Here's how to tell which one applies to you, how long the limit typically lasts, and why most of the advice you'll find online makes it worse."
+category: "ad-networks-content"
+subNiche: ["Google AdSense", "Ad Policy"]
+skillLevel: "Beginner"
+setupTime: "30 minutes to diagnose"
+earningsPotential: "Restores suspended ad income"
+timeToFirstDollar: "Typically under 30 days to lift"
+publishedAt: "2026-09-01"
+updatedAt: "2026-09-01"
+author: "EarnRoutes Editorial"
+authorTitle: "Researched and fact-checked against primary sources"
+authorBio: "Compiled from Google's published documentation on ad serving limits, invalid traffic, and the AdSense Program policies. Every claim about causes, duration, and remedies is quoted from Google's own Help Centre, linked in the source list below."
+featured: false
+prerequisites:
+  - "An active AdSense account showing the ad serving limit notice"
+  - "Access to your AdSense Policy Center"
+sources:
+  - title: "Ad serving limits"
+    publisher: "Google AdSense Help"
+    url: "https://support.google.com/adsense/answer/9437976"
+  - title: "Guide for ad serving limits"
+    publisher: "Google AdSense Help"
+    url: "https://support.google.com/adsense/troubleshooter/12368721"
+  - title: "Invalid traffic definition"
+    publisher: "Google AdSense Help"
+    url: "https://support.google.com/adsense/answer/16737"
+  - title: "AdSense Program policies"
+    publisher: "Google AdSense Help"
+    url: "https://support.google.com/adsense/answer/48182"
+  - title: "Ad placement policies"
+    publisher: "Google AdSense Help"
+    url: "https://support.google.com/adsense/answer/1346295"
+---
+
+Few messages cause more panic than "Ad serving has been limited." Earnings collapse overnight, the dashboard offers almost no explanation, and the top search results are full of people promising a fix if you follow seven steps.
+
+Most of those steps do nothing. Understanding what the limit actually is makes it much easier to respond sensibly — and to avoid the reactions that genuinely make things worse.
+
+## What the Limit Is
+
+Google restricts the number of ads it will show on your site. Your account stays open and fully accessible, your site keeps working, and reporting keeps running. You simply earn far less, because most requests return no ad.
+
+Google's stated reason is to "maintain an ads ecosystem that protects advertisers, publishers and users from fraud and bad ad experiences."
+
+:::info
+This is a throttle, not a ban. It is reversible, it is frequently temporary, and it does not mean your account is being closed. That distinction matters, because panic is what leads publishers into the actions that turn a limit into a termination.
+:::
+
+## There Are Exactly Two Causes
+
+This is the part almost every guide skips, and it's the part that determines what you should do.
+
+**1. Account assessment.** A temporary limit applied while Google evaluates the quality of your traffic. This is common on newer accounts and on accounts that suddenly grow. It is not an accusation.
+
+**2. Invalid traffic concerns.** A limit applied because Google detected invalid traffic associated with your account.
+
+Your **Policy Center** in AdSense shows which enforcement applies to your account. Check it before doing anything else — the two causes call for genuinely different responses.
+
+## How Long It Lasts
+
+Google's own wording: "While this ad serving limit typically impacts publishers for less than 30 days, it may take longer in some cases."
+
+For account assessments specifically, Google is blunter still — it says it "can't say how long this will take."
+
+:::warning
+Nobody can give you a firm date, and any site that promises one is guessing. Google reviews and updates limits automatically as it continues monitoring your traffic. There is no queue position to check and no ticket to escalate.
+:::
+
+## What to Do If It's an Account Assessment
+
+Very little, and that's genuinely the correct answer.
+
+Google's guidance is to keep building content and audience, and to make sure you comply with the Program policies. The limit lifts when Google has enough clean traffic history to assess you.
+
+What that means in practice:
+
+- **Keep publishing.** A site that goes quiet during a limit gives Google less data, not more.
+- **Don't touch your ad setup repeatedly.** Constant changes add noise to the assessment.
+- **Don't remove your ad code.** Pulling the tags entirely stops the traffic history Google is trying to evaluate.
+- **Wait.** Weeks, usually.
+
+## What to Do If It's Invalid Traffic
+
+Here you have real work to do, because something is generating clicks or impressions Google doesn't trust.
+
+Google defines invalid traffic as "any clicks or impressions that may artificially inflate an advertiser's costs or a publisher's earnings" — and this explicitly includes accidental clicks, not only deliberate fraud.
+
+Work through the likely sources honestly:
+
+**Your own clicks.** Google names "clicks or impressions generated by publishers clicking their own live ads" as invalid traffic. Checking whether an ad worked counts. So does clicking one on your phone by accident.
+
+**Accidental clicks from your layout.** Google's placement policy warns against ad implementations "that may cause a high volume of accidental clicks." Ads crowded against buttons, navigation, or links generate exactly this. Audit on mobile, where mis-taps are far more common.
+
+**Encouraged clicks.** Any language asking readers to click or support your sponsors is a violation in itself.
+
+**Purchased or incentivised traffic.** Traffic bought from cheap providers is very often bot traffic. It arrives, bounces, converts at zero, and looks precisely like fraud in Google's logs.
+
+**Friends and family "helping."** A cluster of clicks from the same region with no conversions is trivially detectable and reads as coordinated fraud.
+
+:::action
+Fix the cause, then leave it alone. Google states that if invalid activity continues, "your account may be subject to further enforcement actions or may be permanently closed." A limit you respond to properly is recoverable; repeated invalid traffic is what escalates it to closure.
+:::
+
+## What Makes Things Worse
+
+Common reactions that carry real risk:
+
+- **Deleting and recreating your AdSense account.** Holding multiple accounts is itself a policy violation, and the original enforcement follows you.
+- **Moving the site to a new domain to "reset" the limit.** The enforcement attaches to the account, not the URL.
+- **Buying traffic to prove the site is legitimate.** This is the single fastest way to convert a limit into a termination.
+- **Removing all ads in frustration.** This ends the clean traffic history Google needs to lift the limit.
+- **Repeatedly contacting support.** Ad serving limits are handled by automated review. There's no human queue to move up.
+
+## What Genuinely Helps
+
+- **Read the Policy Center.** It names the enforcement. Everything else is guesswork without it.
+- **Audit ad placement on a phone.** Add real spacing between ads and anything clickable.
+- **Check your traffic sources analytically.** Sudden spikes from unfamiliar referrers, countries you don't write for, or sessions with near-zero duration are worth investigating.
+- **Stop all self-interaction with ads.** Including "just checking."
+- **Keep publishing normally.**
+
+## The Uncomfortable Part
+
+If the limit came from invalid traffic you bought, you already know the cause and the fix is to stop. If it arrived with no obvious explanation on a small, honest site, it is most likely an account assessment — and the correct response really is to carry on publishing and wait.
+
+That's unsatisfying advice. It is also what Google's documentation says, and it is considerably better than the alternatives that get accounts closed permanently.
+
+## Where to Verify Any of This
+
+Every quotation above comes from Google's own AdSense Help Centre, linked below. Enforcement details change, and the Policy Center inside your own account is always more specific about your situation than any general guide — including this one.
