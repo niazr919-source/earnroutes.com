@@ -19,6 +19,8 @@ export const metadata = buildMetadata({
 export default function HomePage() {
   const articles = getAllArticleSummaries();
   const featured = getFeaturedArticles(3);
+  const featuredSlugs = new Set(featured.map((a) => a.slug));
+  const latest = articles.filter((a) => !featuredSlugs.has(a.slug)).slice(0, 6);
   const platforms = getFeaturedPlatforms();
 
   return (
@@ -83,6 +85,29 @@ export default function HomePage() {
               <ArticleCard key={article.slug} article={article} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Latest Guides */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Latest Guides</h2>
+            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              Recently published and reviewed, newest first.
+            </p>
+          </div>
+          <Link
+            href="/category/ad-networks-content"
+            className="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand-600 sm:flex dark:text-brand-400"
+          >
+            Browse all guides <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {latest.map((article) => (
+            <ArticleCard key={article.slug} article={article} />
+          ))}
         </div>
       </section>
 
