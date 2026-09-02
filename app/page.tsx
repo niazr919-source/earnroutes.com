@@ -59,6 +59,9 @@ export default function HomePage() {
               <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
                 {c.description}
               </p>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                {articles.filter((a) => a.category === c.slug).length} guides
+              </p>
               <span className="mt-4 flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400">
                 Browse guides <ArrowRight className="h-3.5 w-3.5" />
               </span>
@@ -98,7 +101,7 @@ export default function HomePage() {
             </p>
           </div>
           <Link
-            href="/category/ad-networks-content"
+            href="/guides"
             className="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand-600 sm:flex dark:text-brand-400"
           >
             Browse all guides <ArrowRight className="h-3.5 w-3.5" />
@@ -114,6 +117,63 @@ export default function HomePage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AdSlot id="ad-in-article-1" variant="in-article" />
       </div>
+
+      {/* Every Guide — compact index so the whole library is one click away
+          rather than buried behind category hubs. */}
+      <section className="border-t border-slate-100 bg-slate-50 py-16 dark:border-slate-900 dark:bg-slate-900/40">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                Every Guide, by Topic
+              </h2>
+              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                All {articles.length} guides in one place — every claim traced to a primary source.
+              </p>
+            </div>
+            <Link
+              href="/guides"
+              className="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand-600 sm:flex dark:text-brand-400"
+            >
+              Open full index <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map((c) => {
+              const inCategory = articles.filter((a) => a.category === c.slug);
+              if (inCategory.length === 0) return null;
+              return (
+                <div key={c.slug}>
+                  <h3 className="flex items-baseline gap-2 border-b border-slate-200 pb-2 text-sm font-bold uppercase tracking-wide text-slate-700 dark:border-slate-800 dark:text-slate-200">
+                    {c.shortName}
+                    <span className="text-xs font-medium text-slate-400">{inCategory.length}</span>
+                  </h3>
+                  <ul className="mt-3 space-y-2.5">
+                    {inCategory.map((a) => (
+                      <li key={a.slug}>
+                        <Link
+                          href={`/guides/${a.slug}`}
+                          className="block text-sm leading-snug text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400"
+                        >
+                          {a.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+
+          <Link
+            href="/guides"
+            className="mt-8 flex items-center justify-center gap-1 text-sm font-semibold text-brand-600 sm:hidden dark:text-brand-400"
+          >
+            Open full index <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+      </section>
 
       {/* Top Platform Directory */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
