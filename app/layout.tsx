@@ -29,7 +29,20 @@ export const metadata: Metadata = {
     title: `${SITE_NAME} — Real Routes to Real Online Income`,
     description: SITE_DESCRIPTION,
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    // Google Discover only shows a large image preview when the page permits
+    // one, and Discover is a meaningful traffic source for content sites.
+    // Uncapped snippets and video previews are the same opt-in for Search.
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: [{ url: "/icon.png", sizes: "64x64", type: "image/png" }],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
