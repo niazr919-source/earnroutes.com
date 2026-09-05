@@ -1,0 +1,51 @@
+# EarnRoutes
+
+> EarnRoutes is a research-backed guide to online income: step-by-step blueprints for AI automation, ad monetization, freelancing, and digital products — built from primary sources and updated regularly.
+
+Every guide is written from the primary documentation of the platform it covers —
+official program policies, fee schedules and help centres — and lists those sources
+at the end of the article. Guides carry a single editorial byline and a visible
+last-reviewed date rather than named author personas.
+
+## AI & Automation
+
+- [Does Google Penalize AI-Generated Content? What Google Actually Says](https://www.earnroutes.com/guides/does-google-penalize-ai-generated-content/): Google has answered this directly, and the answer is not the one most articles report. Here's its exact wording on AI content, the line that separates useful automation from spam, and what it means for bylines.
+- [How YouTube Shorts Monetization Really Works: The 45% Share and the Music Trade-Off](https://www.earnroutes.com/guides/youtube-shorts-monetization-revenue-share/): Shorts don't pay per view — revenue is pooled, split with music rightsholders, then shared at a fixed 45%. Here's each step, and why adding a second track costs the creator pool two thirds.
+- [YouTube Partner Program Requirements: Exactly What It Takes to Get Monetized](https://www.earnroutes.com/guides/youtube-partner-program-eligibility-requirements/): The two routes to the YouTube Partner Program threshold, the monetization policies that disqualify channels after they qualify, and what the reused-content rules mean for AI-assisted video.
+- [How to Build a Faceless YouTube Automation Channel Powered by AI Tools](https://www.earnroutes.com/guides/build-faceless-youtube-automation-channel-ai-tools/): A realistic, policy-compliant blueprint for building a faceless YouTube channel using AI-assisted scripting, voiceover, and editing — without running afoul of YouTube's monetization rules.
+- [How to Monetize Micro-Web Utilities Using Google AdSense & Claude Code](https://www.earnroutes.com/guides/monetize-micro-web-utilities-google-adsense-claude-code/): Build small, genuinely useful web tools with AI coding assistance, deploy them for free, and turn steady organic traffic into passive AdSense income.
+
+## Ad Networks & Content
+
+- [What You Actually Keep From a Substack Subscription (It's Not 90%)](https://www.earnroutes.com/guides/substack-newsletter-fees-what-you-keep/): Substack's 10% is the headline, but Stripe takes three more bites. Here's the real arithmetic on a $10 subscription, and why annual plans quietly pay you more than monthly ones.
+- [AdSense Ads Not Showing? How to Tell a Broken Setup From an Unfilled Ad Unit](https://www.earnroutes.com/guides/adsense-ads-not-showing-blank-spaces/): Blank spaces where ads should be usually mean one of two very different things. Here's how to check which, the code faults Google actually lists, and the CSS that collapses unfilled units.
+- [Core Web Vitals on an Ad-Supported Site: The Three Numbers and What Ads Do to Them](https://www.earnroutes.com/guides/core-web-vitals-ad-supported-sites/): LCP, INP and CLS explained with Google's exact thresholds — plus why display ads attack all three, and the fixes that keep revenue without wrecking the scores.
+- [How to Get Your Site Into Google Discover (And Why Most Publishers Never Do)](https://www.earnroutes.com/guides/google-discover-traffic-for-publishers/): Discover can send more traffic than Search, but you can't rank for it — there's no query. Here's what Google says decides eligibility, and the one meta tag most sites are missing.
+- [Where AdSense Ads Can and Can't Go: The Placement Rules That Get Accounts Banned](https://www.earnroutes.com/guides/adsense-ad-placement-policy-rules/): Google's ad placement policies in plain English — the layouts that trigger invalid-click penalties, the labels you're allowed to use, and how to lay out a page so it earns without risking your account.
+- ["Ad Serving Has Been Limited" on AdSense: What It Means and What Actually Fixes It](https://www.earnroutes.com/guides/adsense-ad-serving-limited-fix/): Google limits ad serving for two specific reasons. Here's how to tell which one applies to you, how long the limit typically lasts, and why most of the advice you'll find online makes it worse.
+- [Rejected for "Low Value Content"? Here's What Google Is Actually Measuring](https://www.earnroutes.com/guides/adsense-low-value-content-rejection-fix/): AdSense's vaguest rejection message, decoded against Google's published content guidelines — the self-assessment questions reviewers effectively apply, and what to change before you reapply.
+- [How AdSense Actually Pays You: Every Threshold, the PIN, and the Payment Date](https://www.earnroutes.com/guides/adsense-payment-thresholds-pin-verification/): The $10 and $100 thresholds explained, what triggers the PIN letter, the deadlines that stop your ads if you miss them, and exactly when money lands each month.
+- [How to Get a Brand-New Website Indexed by Google Search](https://www.earnroutes.com/guides/get-new-website-indexed-google-search/): The three technical requirements Google actually states for indexing, how to submit a sitemap correctly, and why 'not indexed' is usually a crawl problem rather than a quality one.
+- [How Many Articles Do You Need for AdSense Approval? The Honest Answer](https://www.earnroutes.com/guides/how-many-articles-for-adsense-approval/): Google publishes no minimum article count — every number you've read was invented. Here's what the eligibility requirements actually say, and the questions that genuinely decide approval.
+- [How to Get Your Website Approved for Google AdSense: The Complete 2026 Checklist](https://www.earnroutes.com/guides/google-adsense-approval-checklist/): A field-tested, policy-accurate walkthrough of exactly what Google looks for before approving a site for AdSense — and the specific fixes that turn a rejection into an approval.
+
+## Freelance & Job Platforms
+
+- [Self-Employment Tax for US Freelancers: The 15.3% Nobody Warns You About](https://www.earnroutes.com/guides/freelance-self-employment-tax-basics/): Freelance income carries a tax employees never see. Here's the rate, the $400 threshold that triggers it, the deduction that softens it, and why your first freelance tax bill is usually a shock.
+- [What PayPal Actually Takes From a Freelance Payment (And the Fee Nobody Warns You About)](https://www.earnroutes.com/guides/paypal-fees-freelancers-international-payments/): PayPal's headline rate is 3.49% + $0.49, but international freelancers pay two more charges on top. Here's the real arithmetic on a cross-border invoice, with every rate from PayPal's own fee page.
+- [Upwork's Freelancer Service Fee Is No Longer 20% — Here's How It Actually Works](https://www.earnroutes.com/guides/upwork-freelancer-service-fee-explained/): The old 20/10/5 sliding scale is gone. Upwork now sets a fee of 0% to 15% per contract, fixed before you accept, and most guides online still describe a model that no longer exists.
+- [Step-by-Step Guide to Landing High-Paying Remote Tech Jobs on Upwork and Remote.ok](https://www.earnroutes.com/guides/landing-high-paying-remote-tech-jobs-upwork-remoteok/): A practical, credential-agnostic system for winning your first high-value remote contracts on Upwork and getting shortlisted on Remote.ok — from profile setup to rate negotiation.
+
+## Digital Assets & E-Commerce
+
+- [Amazon Associates Commission Rates: What Each Category Actually Pays](https://www.earnroutes.com/guides/amazon-associates-commission-rates/): Amazon's affiliate rates run from 10% down to 0% depending entirely on category — and the products people assume are lucrative are often the worst paying. Here's the full rate card.
+- [Amazon KDP Royalties: 35% vs 70%, and the Price Change Most Guides Missed](https://www.earnroutes.com/guides/amazon-kdp-ebook-royalties-explained/): KDP's 70% royalty band moved from $9.99 to $12.99 in July 2026, the first change since 2007. Here's how both royalty options actually calculate, including the delivery cost most articles ignore.
+- [KDP Paperback Royalties: Why $9.99 Is the Most Important Price on Amazon](https://www.earnroutes.com/guides/amazon-kdp-paperback-royalty-explained/): Paperbacks pay 50% or 60% depending on a single cent of list price, then subtract printing costs. Here's the formula, the breakpoint, and why page count decides whether a book is viable.
+- [How Much Does Shopify Actually Cost? Plans, Transaction Fees, and the 2% Penalty](https://www.earnroutes.com/guides/how-much-does-shopify-cost/): Shopify's plan prices are only part of the bill. Here's what each tier costs monthly and annually, and the extra transaction fee you pay on every order if you don't use Shopify Payments.
+- [How to Sell Digital Products on Etsy: A Beginner's Blueprint to Your First $1,000](https://www.earnroutes.com/guides/sell-digital-products-etsy-beginners-blueprint/): A step-by-step, fee-accurate guide to building a digital download shop on Etsy — from picking a product people actually search for to your first hundred sales.
+
+## About
+
+- [About EarnRoutes](https://www.earnroutes.com/about/): Editorial standards and how these guides are researched.
+- [Platform Directory](https://www.earnroutes.com/platforms/): The platforms referenced across the guides.
+- [Contact](https://www.earnroutes.com/contact/): Corrections and questions.

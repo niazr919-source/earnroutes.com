@@ -1,0 +1,47 @@
+User-Agent: *
+Allow: /
+
+User-Agent: OAI-SearchBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: Claude-SearchBot
+Allow: /
+
+User-Agent: Claude-User
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Perplexity-User
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+User-Agent: Applebot-Extended
+Allow: /
+
+User-Agent: meta-externalagent
+Allow: /
+
+User-Agent: Amazonbot
+Allow: /
+
+User-Agent: Bingbot
+Allow: /
+
+User-Agent: CCBot
+Allow: /
+
+Host: https://www.earnroutes.com
+Sitemap: https://www.earnroutes.com/sitemap.xml
