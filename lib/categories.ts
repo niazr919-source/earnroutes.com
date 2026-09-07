@@ -49,6 +49,16 @@ export const categories: Category[] = [
     color: "amber",
     subNiches: ["Etsy", "Print-on-Demand", "Digital Downloads", "Dropshipping"],
   },
+  {
+    slug: "trading-markets",
+    name: "Trading & Markets",
+    shortName: "Trading",
+    description:
+      "What financial regulators actually publish about trading as an income route — margin rules, account minimums, and the outcomes the SEC and FINRA document. Education, never investment advice.",
+    icon: "TrendingUp",
+    color: "rose",
+    subNiches: ["Day Trading", "Margin Rules", "Regulation", "Risk"],
+  },
 ];
 
 export function getCategoryBySlug(slug: string): Category | undefined {
@@ -62,6 +72,7 @@ const COLOR_CLASSES: Record<string, string> = {
   blue: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
   emerald: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300",
   amber: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
+  rose: "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300",
 };
 
 export function categoryIconClasses(color: string): string {
