@@ -68,49 +68,27 @@ jobs:
         env:
           INDEXNOW_SUBMIT_ALL: ${{ inputs.submit_all }}
 
-      # Keep the previous build's fingerprinted assets alongside the new ones.
+      # Keep fingerprinted assets from recent deploys alive.
       #
-      # Next.js content-hashes CSS and JS filenames, and Hostinger's CDN caches
-      # HTML for up to a year. After a deploy those two facts collide: a visitor
-      # holding cached HTML requests the old hash, which a force-push had just
-      # deleted, gets a 404, and sees a completely unstyled page.
+      # Next.js content-hashes CSS and JS filenames while Hostinger's CDN caches
+      # HTML for up to a year. When a deploy deletes hashes that cached HTML
+      # still references, the page cannot hydrate and Next shows "Application
+      # error: a client-side exception has occurred" over a blank screen.
       #
-      # Retaining the old files costs a few hundred KB and makes stale HTML keep
-      # working until it revalidates. -n never overwrites a file from this build.
-      - name: Preserve the previous build's hashed assets
+      # Retaining only the previous build proved too shallow, so the script
+      # keeps every asset seen in the last 12 deploys.
+      - name: Retain recent builds' hashed assets
         run: |
           set -e
           git fetch --depth=1 origin deploy || true
-          if ! git rev-parse --verify origin/deploy >/dev/null 2>&1; then
-            echo "No existing deploy branch — nothing to carry over."
-            exit 0
+          if git rev-parse --verify origin/deploy >/dev/null 2>&1; then
+            rm -rf /tmp/prev && mkdir -p /tmp/prev
+            git archive origin/deploy | tar -x -C /tmp/prev
+            node scripts/retain-assets.mjs /tmp/prev
+          else
+            echo "No existing deploy branch — first build."
+            node scripts/retain-assets.mjs
           fi
-
-          rm -rf /tmp/prev && mkdir -p /tmp/prev
-          git archive origin/deploy | tar -x -C /tmp/prev
-          [ -d /tmp/prev/_next/static ] || { echo "Previous build had no static assets."; exit 0; }
-
-          mkdir -p out/_next/static
-          STATIC=out/_next/static
-          PREV=/tmp/prev/_next/static
-
-          # Anything the PREVIOUS deploy already carried over is two generations
-          # old. Drop it, so retained assets stay bounded at two builds instead
-          # of accumulating on every deploy forever.
-          if [ -f "$PREV/.carried" ]; then
-            while IFS= read -r f; do [ -n "$f" ] && rm -f "$PREV/$f"; done < "$PREV/.carried"
-          fi
-          rm -f "$PREV/.carried"
-
-          # Snapshot this build, copy in the previous one without clobbering it,
-          # then record exactly which files came from the older build.
-          (cd "$STATIC" && find . -type f | sed 's|^\./||' | sort) > /tmp/this-build.txt
-          cp -rn "$PREV/." "$STATIC/" 2>/dev/null || true
-          (cd "$STATIC" && find . -type f | sed 's|^\./||' | sort) > /tmp/after.txt
-          comm -13 /tmp/this-build.txt /tmp/after.txt > "$STATIC/.carried"
-
-          echo "This build: $(wc -l < /tmp/this-build.txt) asset(s)"
-          echo "Carried over: $(wc -l < "$STATIC/.carried") asset(s) from the previous build"
 
       - name: Publish out/ to the deploy branch
         env:
