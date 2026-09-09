@@ -18,6 +18,15 @@ prerequisites:
   - "A design tool you're comfortable with (Canva's free tier is enough to start)"
   - "A bank account and ID for Etsy Payments verification"
   - "A product idea in a niche you understand or enjoy"
+faq:
+  - question: "What does Etsy charge sellers?"
+    answer: "Etsy's published fees are a listing fee of 0.20 USD per item listed, and a transaction fee of 6.5% of the price you display plus any delivery and gift wrapping you charge. Payment processing is charged separately and varies by country. Etsy Plus is an optional subscription at 10 USD per month."
+  - question: "Do you pay an Etsy listing fee for every digital download sold?"
+    answer: "No. The 0.20 USD fee is charged to create or renew a listing, not per sale, so a single digital listing can sell repeatedly without a new listing fee each time. Etsy.com listings expire after four months."
+  - question: "Are digital downloads a good first Etsy product?"
+    answer: "They avoid inventory, shipping and restocking entirely, and Etsy delivers the file automatically. The trade-off is that success depends on making something people actually search for and pricing it with the fees in mind."
+  - question: "How long does it take to make a first Etsy sale?"
+    answer: "There is no reliable timeline, and anyone quoting one is guessing. What is within your control is choosing a product with genuine search demand, presenting it well, and pricing above the point where fees erase the margin."
 sources:
   - title: "Fees for Selling on Etsy"
     publisher: "Etsy Help Center"

@@ -17,6 +17,15 @@ featured: false
 prerequisites:
   - "A YouTube channel you control, in a country where YPP is available"
   - "A Google Account with 2-Step Verification available"
+faq:
+  - question: "What are the YouTube Partner Program requirements?"
+    answer: "You need 1,000 subscribers plus either 4,000 qualified public watch hours in the last 12 months, or 10 million qualified Shorts views in the last 90 days. You must also comply with the monetization policies, live in an available country, have no active Community Guidelines strikes, enable 2-Step Verification and link an AdSense account."
+  - question: "Does a Community Guidelines strike stop monetization?"
+    answer: "Yes. You must have no active strikes to be eligible. Strikes last 90 days, so a single one can delay monetization by a full quarter, which is why it is worth resolving before you reach the threshold rather than after."
+  - question: "Can AI-assisted videos be monetized on YouTube?"
+    answer: "Using AI tools is not itself disqualifying, but YouTube requires content that is original and authentic and not mass-produced, generic, repetitive or manipulative. It specifically addresses AI-generated content built from generic or unoriginal templates without an authentic creator perspective."
+  - question: "What counts as reused content on YouTube?"
+    answer: "YouTube distinguishes meaningful transformation from repackaging. Reaction videos with real commentary, critical reviews and substantively edited footage are acceptable; unedited compilations and minimal-change reposts of other people's work are not."
 sources:
   - title: "YouTube Partner Program overview & eligibility"
     publisher: "YouTube Help"

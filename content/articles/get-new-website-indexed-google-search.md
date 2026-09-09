@@ -17,6 +17,15 @@ featured: false
 prerequisites:
   - "A live site on your own domain with real content published"
   - "Access to your DNS records or the ability to upload a file to your site root"
+faq:
+  - question: "What does Google require for a page to be indexed?"
+    answer: "Three things: Googlebot is not blocked and can access the page, the page works and returns an HTTP 200 success status, and the page has indexable content in a supported file type that does not violate the spam policies. Google adds that meeting these does not guarantee indexing."
+  - question: "How big can a sitemap be?"
+    answer: "Google's stated limit for a single sitemap is 50MB uncompressed or 50,000 URLs. Larger sites split across multiple sitemaps referenced from a sitemap index. Almost no new site approaches either limit."
+  - question: "What does “Discovered - currently not indexed” mean?"
+    answer: "Google knows the URL exists but has not chosen to crawl it yet. On a new domain with no external links this is the expected state rather than a penalty, and it typically resolves with time, genuine inbound links and consistent publishing."
+  - question: "How long does it take Google to index a new site?"
+    answer: "There is no guaranteed timeline. For a new domain publishing useful content the homepage is often indexed within days to a couple of weeks and most pages within roughly two months, but Google states indexing is never guaranteed."
 sources:
   - title: "Google Search Technical Requirements"
     publisher: "Google Search Central"

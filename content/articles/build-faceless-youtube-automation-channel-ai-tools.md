@@ -18,6 +18,15 @@ prerequisites:
   - "A Google account and a channel not previously suspended for policy violations"
   - "A modest budget (roughly $20–60/month) for AI voice and editing tools"
   - "Patience — faceless channels typically take 60–90 days to reach initial monetization thresholds"
+faq:
+  - question: "Can a faceless YouTube channel be monetized?"
+    answer: "Yes, provided it meets the Partner Program thresholds and the channel monetization policies. Not showing your face is not itself a problem; content that is mass-produced, generic, repetitive or manipulative is."
+  - question: "What does YouTube require for monetization?"
+    answer: "1,000 subscribers plus either 4,000 qualified public watch hours in the last 12 months or 10 million qualified Shorts views in the last 90 days, along with policy compliance, no active Community Guidelines strikes, 2-Step Verification and a linked AdSense account."
+  - question: "Will YouTube demonetize AI-generated videos?"
+    answer: "Not for using AI as such. YouTube requires that each video be materially varied and deliver creative, educational or other value, and specifically addresses AI content built from generic or unoriginal templates without an authentic creator perspective. Sameness is the risk, not the tool."
+  - question: "How much do YouTube creators earn per view?"
+    answer: "There is no fixed rate. YouTube pays 55% of net revenues from watch page ads, 70% from memberships and Super Thanks, and 45% through the pooled Shorts model, but what those percentages apply to depends on advertiser bids for your audience."
 sources:
   - title: "YouTube Partner Program overview & eligibility"
     publisher: "YouTube Help"

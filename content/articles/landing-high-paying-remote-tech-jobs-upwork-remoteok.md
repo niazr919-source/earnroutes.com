@@ -18,6 +18,15 @@ prerequisites:
   - "A specific, marketable skill (development, design, writing, marketing, etc.)"
   - "A portfolio of at least 2–3 work samples, even personal projects"
   - "A government ID for platform identity verification"
+faq:
+  - question: "How much does Upwork take from freelancers?"
+    answer: "Upwork's current documentation states the Freelancer Service Fee ranges from 0% to 15% per contract. It is set per contract, shown before you submit a proposal or accept an offer, and locked once the contract begins. The old 20/10/5 sliding scale no longer applies."
+  - question: "How should you price a freelance rate to hit a target take-home?"
+    answer: "Divide your desired take-home by one minus the fee. At a 10% fee a $20 per hour target means charging about $22.22. Quoting your target rate directly means absorbing the platform fee out of it."
+  - question: "Do you need a portfolio to get hired on Upwork?"
+    answer: "Clients are choosing between strangers, so evidence of outcomes matters more than a list of skills. Completed work you can show, a profile focused on a specific problem you solve, and proposals that address the client's actual brief do more than generic applications."
+  - question: "Is freelance income taxed differently?"
+    answer: "In the United States freelance earnings are self-employment income, which carries self-employment tax of 15.3% on net earnings in addition to income tax. Nothing is withheld from a client payment, so setting money aside is your responsibility."
 sources:
   - title: "Is Upwork Free To Join? Our Pricing Breakdown"
     publisher: "Upwork"

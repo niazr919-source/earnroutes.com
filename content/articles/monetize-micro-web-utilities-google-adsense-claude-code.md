@@ -18,6 +18,15 @@ prerequisites:
   - "Comfort using a free hosting platform like Vercel or Netlify"
   - "A Google account in good standing for AdSense"
   - "Willingness to direct an AI coding assistant (no prior coding required)"
+faq:
+  - question: "Can a small web tool get approved for AdSense?"
+    answer: "There is no traffic minimum in Google's eligibility requirements, but the site still needs unique, high-quality original content that attracts an audience. A single-function tool with no supporting content is thin by that standard, which is why utility sites usually need genuine explanatory pages alongside the tool."
+  - question: "Do you need to be a developer to build a micro-utility?"
+    answer: "AI-assisted coding has lowered the barrier considerably, but you still need to understand what the tool does and verify it works correctly. Publishing a tool you cannot check is a quality and trust problem regardless of how it was built."
+  - question: "Does Google penalize AI-assisted code or content?"
+    answer: "No. Google states appropriate use of AI or automation is not against its guidelines. What violates the spam policies is using automation to generate content primarily to manipulate rankings, which was already prohibited before AI existed."
+  - question: "How much can a micro-utility earn from ads?"
+    answer: "It depends entirely on traffic volume and what advertisers bid for that audience, both of which vary enormously by topic and country. Google's revenue share is fixed and identical for every publisher, so earnings differences come from demand, not from your split."
 sources:
   - title: "Meet AdSense eligibility requirements"
     publisher: "Google AdSense Help"

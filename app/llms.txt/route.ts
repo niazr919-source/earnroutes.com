@@ -41,6 +41,10 @@ export function GET() {
   }
 
   lines.push(
+    "## Quick answers",
+    "",
+    `- [Answers](${absoluteUrl("/answers")}): Every question this site answers directly, grouped by topic, each linked to the guide and primary source it came from.`,
+    "",
     "## About",
     "",
     `- [About ${SITE_NAME}](${absoluteUrl("/about")}): Editorial standards and how these guides are researched.`,

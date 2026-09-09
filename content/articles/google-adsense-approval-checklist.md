@@ -18,6 +18,15 @@ prerequisites:
   - "A live website on your own domain (not a free subdomain)"
   - "The ability to publish and edit pages on your site"
   - "A Google account that has never been banned from AdSense"
+faq:
+  - question: "What does Google require to approve a site for AdSense?"
+    answer: "Google's stated eligibility requirements are your own unique content that is high-quality, original and attracts an audience, compliance with the Program policies, and an applicant aged at least 18. There is no published traffic, word count or article count minimum."
+  - question: "How many articles do you need before applying for AdSense?"
+    answer: "Google publishes no minimum. Any specific number you have read elsewhere was invented by the site publishing it. What matters is whether the site reads as a genuine publication with original content and working policy pages."
+  - question: "Which pages does AdSense expect a site to have?"
+    answer: "A privacy policy, terms, a contact route and a substantive About page, all reachable from every page. Missing or incomplete policy pages are among the most common non-content reasons an application fails."
+  - question: "Can you reapply to AdSense after a rejection?"
+    answer: "Yes. Fix the issues first and give Google time to recrawl the changed pages before reapplying, so the reviewer sees the improved version rather than a cached copy of the old one."
 sources:
   - title: "Meet AdSense eligibility requirements"
     publisher: "Google AdSense Help"
