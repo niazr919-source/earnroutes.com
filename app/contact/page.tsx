@@ -16,8 +16,8 @@ export default function ContactPage() {
       <section className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white">Contact Us</h1>
         <p className="mt-3 max-w-xl text-base leading-relaxed text-slate-500 dark:text-slate-400">
-          Have a correction, a question about a guide, or a partnership inquiry? Send us a
-          message below.
+          Have a correction, a question about a guide, or a partnership inquiry? Get in touch —
+          we read every message.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-4">

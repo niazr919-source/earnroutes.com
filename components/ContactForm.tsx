@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { CircleCheck, LoaderCircle, Send, TriangleAlert } from "lucide-react";
+import { CircleCheck, LoaderCircle, Send, TriangleAlert, Mail } from "lucide-react";
 import { CONTACT_EMAIL } from "@/lib/seo";
 
 /**
@@ -63,6 +63,33 @@ export function ContactForm() {
     }
     setStatus("success");
     setForm(EMPTY);
+  }
+
+  // With no endpoint configured there is nowhere for a message to go, so offer
+  // the email route instead of a form that is guaranteed to fail on submit.
+  // A contact page that visibly errors reads as broken to a reader — and to an
+  // ad network reviewer checking that the site can be contacted.
+  if (!FORM_ENDPOINT) {
+    return (
+      <div className="flex flex-col items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center dark:border-slate-800 dark:bg-slate-900">
+        <Mail className="h-10 w-10 text-brand-600" />
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white">Email us directly</h3>
+        <p className="max-w-sm text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+          Corrections, questions about a guide, and partnership enquiries are all welcome. We read
+          every message and reply within 1–2 business days.
+        </p>
+        <a
+          href={`mailto:${CONTACT_EMAIL}`}
+          className="mt-1 inline-flex items-center gap-2 rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
+        >
+          <Mail className="h-4 w-4" /> {CONTACT_EMAIL}
+        </a>
+        <p className="mt-1 text-xs text-slate-400">
+          Found something out of date? Tell us which guide and we&apos;ll re-check it against the
+          source.
+        </p>
+      </div>
+    );
   }
 
   if (status === "error") {
