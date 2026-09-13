@@ -8,12 +8,18 @@ export const CONTACT_EMAIL = `hello@${SITE_DOMAIN}`;
 export const PRIVACY_EMAIL = `privacy@${SITE_DOMAIN}`;
 
 /**
- * AdSense publisher ID, e.g. "ca-pub-1234567890123456".
- * Set NEXT_PUBLIC_ADSENSE_CLIENT_ID in .env.local once Google approves the site.
- * While this is empty the ad script is not loaded and ad slots render nothing,
- * so reviewers never see empty or placeholder ad boxes.
+ * AdSense publisher ID.
+ *
+ * Public by design — it appears in the page source of every site running
+ * AdSense — so it is committed rather than kept in an environment variable,
+ * and NEXT_PUBLIC_ADSENSE_CLIENT_ID still overrides it if one is set.
+ *
+ * Setting this switches on the AdSense script in the document head and makes
+ * /ads.txt generate. Individual ad units stay dormant until each AdSlot is
+ * given its own `slot` ID from the AdSense dashboard.
  */
-export const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? "";
+export const ADSENSE_CLIENT_ID =
+  process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? "ca-pub-2716080376550479";
 export const SITE_DESCRIPTION =
   "EarnRoutes is a research-backed guide to online income: step-by-step blueprints for AI automation, ad monetization, freelancing, and digital products — built from primary sources and updated regularly.";
 

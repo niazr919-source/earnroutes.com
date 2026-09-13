@@ -8,10 +8,24 @@
  * Instead the file is created only when a publisher ID exists, and removed
  * otherwise, so an unconfigured site returns a genuine 404.
  */
-import { writeFileSync, rmSync, existsSync, mkdirSync } from "node:fs";
+import { writeFileSync, rmSync, existsSync, mkdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
-const clientId = (process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? "").trim();
+/**
+ * Reads the publisher ID committed in lib/seo.ts so the site and ads.txt can
+ * never disagree. This script is plain Node and cannot import the TypeScript
+ * module, so it reads the literal instead of duplicating the value here.
+ */
+function committedClientId() {
+  try {
+    const seo = readFileSync(join(process.cwd(), "lib", "seo.ts"), "utf8");
+    return seo.match(/NEXT_PUBLIC_ADSENSE_CLIENT_ID\s*\?\?\s*"(ca-pub-\d+)"/)?.[1] ?? "";
+  } catch {
+    return "";
+  }
+}
+
+const clientId = (process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || committedClientId()).trim();
 const publicDir = join(process.cwd(), "public");
 const target = join(publicDir, "ads.txt");
 

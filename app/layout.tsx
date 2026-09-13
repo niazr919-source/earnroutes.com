@@ -4,9 +4,14 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
-import { AdSenseScript } from "@/components/AdSenseScript";
 import { ConsentBanner } from "@/components/ConsentBanner";
-import { organizationJsonLd, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
+import {
+  organizationJsonLd,
+  ADSENSE_CLIENT_ID,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
@@ -90,6 +95,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: consentInitScript }} />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        {/* AdSense tag, emitted into the static HTML rather than injected on
+            the client so Google's verification finds it without executing JS.
+            It sits after the Consent Mode defaults above, which must run first
+            so EEA/UK visitors start denied. */}
+        {ADSENSE_CLIENT_ID && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+            crossOrigin="anonymous"
+          />
+        )}
       </head>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <JsonLd data={organizationJsonLd()} />
@@ -97,7 +113,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <ConsentBanner />
-        <AdSenseScript />
       </body>
     </html>
   );

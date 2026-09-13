@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ADSENSE_CLIENT_ID } from "@/lib/seo";
+import { adSlotFor } from "@/lib/ad-slots";
 
 const SIZE_CLASSES: Record<string, string> = {
   banner: "min-h-[90px] w-full max-w-[728px] mx-auto",
@@ -32,10 +33,13 @@ export function AdSlot({
   variant?: "banner" | "in-article" | "sidebar" | "footer";
   label?: string;
 }) {
+  // An explicit slot prop wins; otherwise fall back to the central map so
+  // placements can be switched on from one file.
+  const adSlot = slot ?? adSlotFor(id);
   const pushed = useRef(false);
 
   useEffect(() => {
-    if (!ADSENSE_CLIENT_ID || !slot || pushed.current) return;
+    if (!ADSENSE_CLIENT_ID || !adSlot || pushed.current) return;
     pushed.current = true;
     try {
       const w = window as unknown as { adsbygoogle?: unknown[] };
@@ -43,9 +47,9 @@ export function AdSlot({
     } catch {
       // AdSense blocked by an ad blocker or not yet loaded — nothing to do.
     }
-  }, [slot]);
+  }, [adSlot]);
 
-  if (!ADSENSE_CLIENT_ID || !slot) return null;
+  if (!ADSENSE_CLIENT_ID || !adSlot) return null;
 
   return (
     <div className="my-8 flex flex-col items-center gap-2 not-prose">
@@ -56,7 +60,7 @@ export function AdSlot({
         className={`adsbygoogle block ${SIZE_CLASSES[variant]}`}
         style={{ display: "block" }}
         data-ad-client={ADSENSE_CLIENT_ID}
-        data-ad-slot={slot}
+        data-ad-slot={adSlot}
         data-ad-format="auto"
         data-full-width-responsive="true"
         data-ad-region={id}
